@@ -1,0 +1,330 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>CSS Grid layout</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section><img class="logo" src="https://i.ytimg.com/vi/-fDqBEjfzGo/maxresdefault.jpg" alt=""></section>
+        <section>
+            <section><h2>Grid Layout</h2>
+                <p>CSS Grid Layout is the most powerful layout system available in CSS. It is a 2-dimensional system,
+                    meaning it can handle both columns and rows.
+                    You
+                    work with Grid Layout by applying CSS rules both to a parent element (which becomes the Grid
+                    Container)
+                    and to that element's children (which become Grid Items).</p>
+            </section>
+            <section>
+                <h2>Differences with Flexbox</h2>
+                <p>Flexbox is single-dimensional system, when Grid allows content to be aligned in both dimensions</p>
+            </section>
+            <section>
+                <img class="diffr" src="assets/imgs/diffr.jpg" alt="">
+                <p>Flexbox on top, Grid on bottom</p>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>a bit of history</h2>
+                <p>Grid started life some eight years ago, via a proposal sent to the CSS Working Group from Microsoft.
+                    This
+                    blog post from April 2011 outlines the initial proposal, and touches on how eventually Grid, along
+                    with
+                    Flexbox, will allow for dependable “adaptive layouts”.</p>
+            </section>
+            <section>
+                <img class="microsoft" src="https://cdn-images-1.medium.com/max/1000/1*V_qFP83oTxFA1n9m3Djo6g.png"
+                     alt="">
+                <p>How Microsoft visualized what Grid would aim to achieve back in 2011.</p>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Browsers support</h2>
+                <img src="assets/imgs/Безымянный.png" alt="">
+            </section>
+            <section><img class="mem" src="assets/imgs/mem.jpg" alt=""></section>
+        </section>
+        <section>
+            <h2>Grid frameworks</h2>
+            <img src="assets/imgs/bg-frameworks11.jpg" alt=""></section>
+        <section class="content">
+            <h2>Content</h2>
+            <div>
+                <p>Container properties:</p>
+                <ul>
+                    <li>display</li>
+                    <li> grid-template-columns</li>
+                    <li>grid-template-rows</li>
+                    <li> grid-template-areas</li>
+                    <li> grid-template</li>
+                    <li>grid-column-gap</li>
+                    <li>grid-row-gap</li>
+                    <li>grid-gap</li>
+                    <li>justify-items</li>
+                    <li>align-items</li>
+                    <li>justify-content</li>
+                    <li>align-content</li>
+                </ul>
+            </div>
+            <div>
+                <p>Elements properties:</p>
+                <ul>
+                    <li>grid-column-start</li>
+                    <li> grid-column-end</li>
+                    <li>grid-row-start</li>
+                    <li>grid-row-end</li>
+                    <li>grid-column</li>
+                    <li>grid-row</li>
+                    <li>grid-area</li>
+                    <li>justify-self</li>
+                    <li>align-self</li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <h2>Step 1 <p>
+                Create a grid-container
+            </p></h2>
+            <div class="codeGrid">
+                <p>
+                    .grid-container {<br>
+                    display: grid;<br>
+                    }</p></div>
+            <p>The element to which applies 'display: grid' - its the direct parent for all elements of grid.</p>
+        </section>
+        <section>
+            <section>
+                <h2>Step 2 <p>
+                    Drow a virtual grid
+                </p></h2>
+                <div class="codeGrid">
+                    <p>
+                        .grid-container {<br>
+                        display: grid;<br>
+                        grid-template-columns: 250px 1fr 20%;<br>
+                        grid-template-rows: 80px 80px;<br>
+                        }
+                    </p>
+                </div>
+                <p> 1fr - fraction of reminding space</p>
+            </section>
+            <section>
+                <h2>Result:</h2>
+                <div class="container">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                </div>
+                <p>Got a grid of 6 areas.</p>
+            </section>
+            <section>
+                <div class="codeGrid">
+                    <p>
+                        grid-template-rows:<strong> 80px 80px;</strong><br><br>
+                        <span style="color: #fff;">Can be writen as: </span><br><br>
+                        grid-template-rows:<strong> repeat(2, 80px)</strong>;
+                    </p></div>
+            </section>
+        </section>
+        <section>
+            <h2>Units of measure</h2>
+            <ul class="units">
+                <li>Auto</li>
+                <li>px, rem, em, vw etc</li>
+                <li>%</li>
+                <li>max-content, min-content, minmax(min, max)</li>
+            </ul>
+        </section>
+        <section>
+            <section>
+                <h2>Step 3 <p>Cling to the grid</p></h2>
+                <img class="cat" src="assets/imgs/cling.jpg" alt="">
+            </section>
+            <section>
+                <h2>Grid-lines</h2>
+                <div class="codeGrid">
+                    <p>
+                        .grid-element{<br>
+                        grid-column-start: 2;<br>
+                        grid-column-end: 4;<br>
+                        grid-row-start: 1;<br>
+                        grid-row-end: 2;<br>
+                        }
+                    </p>
+                </div>
+            </section>
+            <section>
+                <h2>Result:</h2>
+                <div class="container">
+                    <div>1</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div class="grid-element">grid-element</div>
+                </div>
+            </section>
+            <section>
+                <div class="codeGrid">
+                    <p>
+                        grid-column-start: 2;<br>
+                        grid-column-end: 4;<br>
+                        grid-row-start: 1;<br>
+                        grid-row-end: 2;<br><br>
+                        <span style="color: #fff;">Can be writen as: </span><br><br>
+                        grid-column: 2 / 4;<br>
+                        grid-row: 1 / 2;<br>
+                    </p></div>
+            </section>
+            <section>
+                <h2>Grid-area</h2>
+                <div class="codeGrid">
+                    <p>
+                        grid-column: 2 / 4;<br>
+                        grid-row: 1 / 2;<br><br>
+                        <span style="color: #fff;">Can be writen as: </span><br><br>
+                        grid-area: 2 / 4 / 1 / 2;
+                    </p></div>
+            </section>
+        </section>
+        <section>
+            <h2>Another method</h2>
+            <div class="codeGrid">
+                <p>
+                    .grid-element {<br>
+                    grid-area: any-name;<br>
+                    }
+                </p>
+            </div>
+        </section>
+        <section>
+            <h2>Step 1 and 2</h2>
+            <div class="codeGrid">
+                <p>
+                    body {<br>
+                    display: grid;<br>
+                    grid-template-rows:<br><strong>
+                    auto<br>
+                    1fr<br>
+                    auto;<br></strong>
+                    }
+                </p></div>
+        </section>
+        <section>
+            <h2>Step 3</h2>
+            <div class="codeGrid">
+                <p>
+                    body {<br>
+                    grid-template-areas:<br> <strong>
+                    "header"<br>
+                    "main"<br>
+                    "footer";<br></strong>
+                    }
+                </p></div>
+        </section>
+        <section>
+        <section>
+            <h2>Step 4<p>Cling to the grid</p></h2>
+
+        </section>
+            <section>
+                <div class="codeGrid">
+                    <p>
+                        header {<br>
+                        grid-area: header;<br>
+                        }<br><br>
+                        main {<br>
+                        grid-area: main;<br>
+                        }<br><br>
+                        footer {<br>
+                        grid-area: footer;<br>
+                        }                </p></div>
+            </section>
+            <section>
+                <h2>Result:</h2>
+                <img class="step" src="assets/imgs/4step.jpg" alt="">
+            </section>
+        </section>
+        <section class="content">
+            <h2>Aligning</h2>
+            <div>
+                <p>Grid-container</p>
+                <ul>
+                    <li>align-items</li>
+                    <li>justify-items</li>
+
+                </ul>
+            </div>
+            <div>
+                <p>Grid-element</p>
+                <ul>
+                    <li>align-self</li>
+                    <li>justify-self</li>
+                </ul>
+            </div>
+        </section>
+        <section class="content">
+            <h2>Indents</h2>
+            <div>
+                <p>Auto</p>
+                <ul>
+                    <li>align-content</li>
+                    <li>justify-content</li>
+                </ul>
+            </div>
+            <div>
+                <p>Manually</p>
+                <ul>
+                    <li>grid-row-gap</li>
+                    <li>grid-column-gap</li>
+                </ul>
+            </div>
+        </section>
+        <section class="end">
+            <h2>Thanks for attantion</h2>
+            <p>Presentation "CSS Grid layout" by <a target="_blank" href="https://vk.com/vladtataritskii">Vlad Tataritsky</a> </p>
+        </section>
+    </div>
+</div>
+
+<script src="js/reveal.js"></script>
+
+<script>
+  // More info about config & dependencies:
+  // - https://github.com/hakimel/reveal.js#configuration
+  // - https://github.com/hakimel/reveal.js#dependencies
+  Reveal.initialize({
+    dependencies: [
+      {src: 'plugin/markdown/marked.js'},
+      {src: 'plugin/markdown/markdown.js'},
+      {src: 'plugin/notes/notes.js', async: true},
+      {src: 'plugin/highlight/highlight.js', async: true}
+    ]
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v4.0 | 20180602
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+  display: block;
+}
+strong{
+  color: white;
+}
+h2{
+  border: 2px solid grey;
+}
+p{
+  font-size: 35px;
+}
+.logo{
+  width: 300vh;
+}
+.microsoft{
+  width:70%;
+}
+.diffr{
+  width:80%;
+}
+.mem{
+  width: 80%;
+}
+.content div{
+  width: 40%;
+  height: 50%;
+  display: inline-block;
+  vertical-align: top;
+}
+.content div li{
+  font-size: 32px;
+  font-weight: bolder;
+}
+.content p{
+  border: 2px solid gold;
+}
+.codeGrid p{
+  text-align: left;
+  font-size: 46px;
+  letter-spacing:-2px;
+  border: 2px solid gold;
+  padding: 20px;
+  color: lightskyblue;
+}
+.container {
+  display: grid;
+  grid-template-columns: 250px 1fr 20%;
+  grid-template-rows: repeat(2, 80px);
+  border: 2px dashed red;
+}
+.container div{
+  background-color: lightcyan;
+  border: 2px dashed red;
+  color: black;
+}
+.units li{
+  color: lightskyblue;
+  font-size: 47px;
+}
+.cat{
+  width: 80%;
+}
+.container .grid-element{
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  border: 0;
+  background-color: red;
+  color: white;
+}
+.step{
+  width: 45%;
+}
+.end p{
+  font-size: 50px;
+}
+
+
