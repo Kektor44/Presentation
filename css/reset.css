@@ -103,5 +103,11 @@ p{
 .end p{
   font-size: 50px;
 }
+.green li{
+  color: lawngreen;
+}
+.red li{
+  color: red;
+}
 
 
